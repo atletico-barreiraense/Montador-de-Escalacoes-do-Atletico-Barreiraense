@@ -1,4 +1,4 @@
-const C="escalacoes-v3",A=["./","index.html","manifest.webmanifest","icon.svg"];
+const C="escalacoes-v4",A=["./","index.html","manifest.webmanifest","icon.svg"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(A)).then(()=>self.skipWaiting()));});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(n=>n!==C).map(n=>caches.delete(n)))).then(()=>self.clients.claim()));});
 self.addEventListener("fetch",e=>{
